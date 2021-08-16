@@ -6,10 +6,22 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class InteractListener implements Listener {
+
+    @EventHandler
+    public void onInventoryClose(InventoryCloseEvent inventoryCloseEvent) {
+        try {
+            Player player = (Player) inventoryCloseEvent.getPlayer();
+
+            if (inventoryCloseEvent.getView().getTitle().equals("§8┃ §f§lHeadStorage")) {
+                HeadStorage.getService().getAPI().getStorageInventory().getPlayersList().remove(player);
+            }
+        } catch (Exception ignored) {}
+    }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent inventoryClickEvent) {
