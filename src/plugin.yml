@@ -1,0 +1,14 @@
+name: HeadStorage
+authors:
+  - VountyStudios
+  - StonksCloud
+main: net.vounty.studios.HeadStorage
+version: 1.0
+api-version: 1.13
+commands:
+  headstorage:
+    aliases:
+      - hs
+      - heads
+      - hstorage
+      - heads
