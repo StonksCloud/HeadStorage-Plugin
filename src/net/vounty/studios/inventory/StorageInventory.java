@@ -89,7 +89,7 @@ public class StorageInventory {
     }
 
     public List<HeadStorageConfig.HeadEntry> getArray(Player player) {
-        return this.getArray(player, (this.getPlayersPage().get(player) - 1) * 45 + 1, this.getPlayersPage().get(player) * 45);
+        return this.getArray(player, (this.getPlayersPage().get(player) - 1) * 45, this.getPlayersPage().get(player) * 45);
     }
 
     public boolean isOnFirstPage(Player player) {

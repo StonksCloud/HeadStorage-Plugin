@@ -22,7 +22,7 @@ public class HeadManager {
         List<HeadStorageConfig.HeadEntry> array = new LinkedList<>();
         HeadStorageConfig headStorageConfig = HeadStorage.getService().getAPI().getHeadStorageConfig();
         for (HeadStorageConfig.HeadEntry head : headStorageConfig.getHeads()) {
-            if (head.getName().equals(name) || head.getName().startsWith(name) || head.getName().toLowerCase(Locale.ROOT).startsWith(name.toLowerCase(Locale.ROOT)) || head.getName().toLowerCase(Locale.ROOT).equals(name.toLowerCase(Locale.ROOT))) array.add(head);
+            if (head.getName().equals(name) || head.getName().startsWith(name) || head.getName().toLowerCase(Locale.ROOT).startsWith(name.toLowerCase(Locale.ROOT)) || head.getName().toLowerCase(Locale.ROOT).equals(name.toLowerCase(Locale.ROOT))) if (!array.contains(head)) array.add(head);
         }
         return array.size() > 0 ? Optional.of(array) : Optional.empty();
     }
@@ -59,7 +59,7 @@ public class HeadManager {
         HeadStorageConfig headStorageConfig = HeadStorage.getService().getAPI().getHeadStorageConfig();
         for (HeadStorageConfig.HeadEntry head : headStorageConfig.getHeads()) {
             for (String searchTag : tags) {
-                for (String existTag : head.getTags()) if (searchTag.equals(existTag) || existTag.startsWith(searchTag) || searchTag.toLowerCase(Locale.ROOT).equals(existTag.toLowerCase(Locale.ROOT)) || existTag.toLowerCase(Locale.ROOT).startsWith(searchTag.toLowerCase(Locale.ROOT))) array.add(head);
+                for (String existTag : head.getTags()) if (searchTag.equals(existTag) || existTag.startsWith(searchTag) || searchTag.toLowerCase(Locale.ROOT).equals(existTag.toLowerCase(Locale.ROOT)) || existTag.toLowerCase(Locale.ROOT).startsWith(searchTag.toLowerCase(Locale.ROOT))) if (!array.contains(head)) array.add(head);
             }
         }
         return array.size() > 0 ? Optional.of(array) : Optional.empty();
@@ -80,7 +80,7 @@ public class HeadManager {
         HeadStorageConfig headStorageConfig = HeadStorage.getService().getAPI().getHeadStorageConfig();
         for (HeadStorageConfig.HeadEntry head : headStorageConfig.getHeads()) {
             for (String searchTag : tags) {
-                for (String existTag : head.getTags()) if (searchTag.equals(existTag) || existTag.startsWith(searchTag) || searchTag.toLowerCase(Locale.ROOT).equals(existTag.toLowerCase(Locale.ROOT)) || existTag.toLowerCase(Locale.ROOT).startsWith(searchTag.toLowerCase(Locale.ROOT))) array.add(head);
+                for (String existTag : head.getTags()) if (searchTag.equals(existTag) || existTag.startsWith(searchTag) || searchTag.toLowerCase(Locale.ROOT).equals(existTag.toLowerCase(Locale.ROOT)) || existTag.toLowerCase(Locale.ROOT).startsWith(searchTag.toLowerCase(Locale.ROOT))) if (!array.contains(head)) array.add(head);
             }
         }
         return array.size() > 0 ? Optional.of(array) : Optional.empty();
