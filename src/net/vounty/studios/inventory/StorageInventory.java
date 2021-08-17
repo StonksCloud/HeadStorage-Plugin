@@ -58,7 +58,7 @@ public class StorageInventory {
 
     public void updateItems(Player player, Inventory inventory, List<HeadStorageConfig.HeadEntry> headEntries) {
         for (int count = 0; count < 45; count++) inventory.setItem(count, new ItemStack(Material.AIR));
-        inventory.setItem(48, new ItemCreator(Material.BOOK, 1).setDisplayName("§8⋆ §fPage").setLore("§8┃ §7" + this.getPlayersPage().get(player)).create());
+        inventory.setItem(47, new ItemCreator(Material.BOOK, 1).setDisplayName("§8⋆ §fPage").setLore("§8┃ §7" + this.getPlayersPage().get(player)).create());
         headEntries.forEach(head -> {
             inventory.addItem(new ItemCreator(Material.PLAYER_HEAD, 1).setDisplayName("§8┃ §f" + head.getName()).setLore(buildLoreForHead(head)).setSkullData(head.getTexture(), false).create());
         });
@@ -66,7 +66,7 @@ public class StorageInventory {
 
     public void updateItems(Player player, Inventory inventory) {
         for (int count = 0; count < 45; count++) inventory.setItem(count, new ItemStack(Material.AIR));
-        inventory.setItem(48, new ItemCreator(Material.BOOK, 1).setDisplayName("§8⋆ §fPage").setLore("§8┃ §7" + this.getPlayersPage().get(player)).create());
+        inventory.setItem(47, new ItemCreator(Material.BOOK, 1).setDisplayName("§8⋆ §fPage").setLore("§8┃ §7" + this.getPlayersPage().get(player)).create());
         List<HeadStorageConfig.HeadEntry> headEntries;
         if (this.getPlayersPage().get(player) == 1) {
             headEntries = getArray(player, 0, 45);
