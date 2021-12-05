@@ -1,4 +1,7 @@
 # HeadStorage-Plugin
+
+Support of HeadStorage is closed. VountyStudios will be no longer exist.
+
 HeadStorage is a real-time search engine for minecraft heads<br>
 **Only works with 1.16 or higher!**
 
